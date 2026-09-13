@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# dev tools
+.playwright-mcp/
+
+# reference images
+*.png
+
+# local dev / planning artifacts
+.claude/
+WEBSITE_PLAN.md
+scripts/
