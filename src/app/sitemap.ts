@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { getAllProjects } from "@/lib/project-data";
 import { getAllPosts } from "@/lib/blog-data";
 
+export const dynamic = "force-static";
+
 const baseUrl = "https://akash.dev";
 
 export default function sitemap(): MetadataRoute.Sitemap {
