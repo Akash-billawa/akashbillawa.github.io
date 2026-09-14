@@ -5,6 +5,7 @@ interface Deliverable {
   title: string;
   desc: string;
   action: string;
+  tags: string[];
 }
 
 const deliverables: Deliverable[] = [
@@ -13,30 +14,35 @@ const deliverables: Deliverable[] = [
     title: "Find the real vulnerabilities",
     desc: "We bring together manual penetration testing, protocol inspection, API fuzzing, and frontline threat modeling to unearth the flaws sitting behind standard scanner outputs.",
     action: "Threat Modeling & Auditing",
+    tags: ["STRIDE Mapping", "OWASP Top 10", "Burp Suite Pro", "Zero-Day Discovery"],
   },
   {
     num: "02",
     title: "Make architecture tangible, fast",
     desc: "We build functioning security harnesses, proof-of-concept exploits, and interactive mobile prototypes quickly so hypotheses can be verified before full engineering investment.",
     action: "Rapid Prototyping & Exploits",
+    tags: ["PoC Exploit Harnesses", "Flutter UI Spikes", "Platform Channels", "Offline Sync"],
   },
   {
     num: "03",
     title: "Deliver 60 to 120 FPS fluidity",
     desc: "Fluid gesture physics, zero jank, and instant responsiveness don't emerge from generic templates. We craft them with Flutter's Skia/Impeller engine and custom shaders.",
     action: "Native Flutter Architecture",
+    tags: ["Impeller ARM", "Custom Shaders", "Riverpod State", "120 FPS Physics"],
   },
   {
     num: "04",
     title: "Carry it through to production build",
     desc: "We do not stop at filing a vulnerability report. We engineer the hardened application, the memory-safe libraries, the encrypted storage, and the CI/CD pipeline.",
     action: "Production Engineering & CI/CD",
+    tags: ["Memory-Safe Rust", "Hardware Keychains", "TLS 1.3 Pinning", "GitHub Actions"],
   },
   {
     num: "05",
     title: "Turn telemetry into continuous defense",
     desc: "We deploy deep learning intrusion detection and real-time packet classification to confirm attacks are neutralized, feeding forensic logs into continuous hardening.",
     action: "Deep Learning & Forensics",
+    tags: ["CICIDS2017 Dataset", "Transformer Hybrid", "eBPF Packet Flows", "98.7% Accuracy"],
   },
 ];
 
@@ -77,9 +83,14 @@ export default function HavuValue() {
               } ${idx % 2 === 0 ? "md:border-r lg:border-r-0" : ""}`}
             >
               <div className="space-y-4">
-                <span className="font-mono text-2xl font-bold text-[var(--hv-muted)] block">
-                  {d.num}
-                </span>
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-2xl font-bold text-[var(--hv-muted)] block">
+                    {d.num}
+                  </span>
+                  <span className="font-mono text-[10px] font-bold tracking-wider text-[var(--hv-muted)] uppercase">
+                    {d.action}
+                  </span>
+                </div>
                 <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[var(--hv-ink)]">
                   {d.title}
                 </h3>
@@ -88,10 +99,15 @@ export default function HavuValue() {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[var(--hv-hairline)]">
-                <span className="font-mono text-[11px] font-bold tracking-wider text-[var(--hv-muted)] uppercase">
-                  {d.action}
-                </span>
+              <div className="pt-4 border-t border-[var(--hv-hairline)] flex flex-wrap gap-1.5">
+                {d.tags.map((tag, tIdx) => (
+                  <span
+                    key={tIdx}
+                    className="font-mono text-[10px] px-2.5 py-1 rounded-full border border-[var(--hv-hairline)] text-[var(--hv-ink-70)] hover:border-[var(--hv-ink)] hover:text-[var(--hv-ink)] transition-colors"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           ))}

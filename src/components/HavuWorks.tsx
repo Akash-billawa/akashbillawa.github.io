@@ -15,6 +15,7 @@ interface WorkItem {
   title: string;
   category: string;
   metrics: string;
+  telemetry: string;
   description: string;
   tech: string[];
   mockup: "nova" | "sentinel" | "jarvis" | "nid";
@@ -30,6 +31,7 @@ const works: WorkItem[] = [
     title: "Nova Calc",
     category: "Cross-Platform Mobile Application",
     metrics: "60 FPS Fluidity · 200+ Unit Conversions · Offline First",
+    telemetry: "RUNTIME: FLUTTER IMPELLER · 120 FPS ARM · 0 MEMORY LEAKS",
     description:
       "A mathematically rigorous calculator and graphing engine engineered for mobile. Leverages Flutter's Skia/Impeller pipeline for butter-smooth scientific animations, offline-first Hive caching, and clean Riverpod state architecture.",
     tech: ["Flutter", "Dart", "Riverpod", "Hive", "iOS / Android"],
@@ -44,6 +46,7 @@ const works: WorkItem[] = [
     title: "SentinelScan AI",
     category: "Autonomous Threat & Vulnerability Engine",
     metrics: "Real-time Zero-Day Pattern Detection · OWASP Top 10",
+    telemetry: "CVE DB: 2024 · SCAN ENGINE: HYBRID ML · OWASP VERIFIED",
     description:
       "An intelligent vulnerability scanner bridging traditional CVE databases with machine learning anomaly classifiers. Analyzes web applications, REST endpoints, and network configurations for misconfigurations and zero-day risks.",
     tech: ["Python", "TensorFlow", "FastAPI", "Docker", "OWASP ZAP"],
@@ -58,6 +61,7 @@ const works: WorkItem[] = [
     title: "Jarvis AI",
     category: "Autonomous Systems Intelligence Assistant",
     metrics: "14ms Sub-agent Execution Latency · Natural Language CLI",
+    telemetry: "LATENCY: 14MS · ARCH: SUB-AGENT DAG · ASYNCIO DISPATCH",
     description:
       "A modular AI copilot engineered for system administration and security auditing. Implements natural language tool orchestration, dynamic CLI script synthesis, and context-aware vulnerability discovery.",
     tech: ["Python", "LangChain", "OpenAI", "FastAPI", "AsyncIO"],
@@ -72,6 +76,7 @@ const works: WorkItem[] = [
     title: "Deep Learning NID",
     category: "Academic Research & Transformer Model",
     metrics: "98.7% Detection Accuracy on 2.8M Network Flows",
+    telemetry: "DATASET: CICIDS2017 · 2.83M FLOWS · ACCURACY: 98.7%",
     description:
       "MSc research evaluating Transformer and CNN-LSTM hybrid architectures on 2.8 million flow records from the CICIDS2017 benchmark dataset, achieving 98.7% detection with ultra-low false-positive rates.",
     tech: ["PyTorch", "Python", "CICIDS2017", "Scikit-Learn", "Pandas"],
@@ -114,7 +119,7 @@ export default function HavuWorks() {
             >
               {/* Left Column: Info */}
               <div className="lg:col-span-6 space-y-6">
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <span className="font-mono text-sm font-bold text-[var(--hv-muted)]">
                     {work.number}
                   </span>
@@ -124,9 +129,14 @@ export default function HavuWorks() {
                   </span>
                 </div>
 
-                <h3 className="hv-display-jp text-3xl sm:text-4xl font-black text-[var(--hv-ink)]">
-                  {work.title}
-                </h3>
+                <div className="space-y-2">
+                  <span className="font-mono text-[10px] font-bold px-2.5 py-1 rounded bg-[var(--hv-ink-12)] text-[var(--hv-ink)] tracking-wider block w-fit">
+                    {work.telemetry}
+                  </span>
+                  <h3 className="hv-display-jp text-3xl sm:text-4xl font-black text-[var(--hv-ink)]">
+                    {work.title}
+                  </h3>
+                </div>
 
                 <p className="font-mono text-xs text-[var(--hv-ink-70)] font-medium">
                   {work.metrics}
@@ -136,11 +146,11 @@ export default function HavuWorks() {
                   {work.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 pt-2">
+                <div className="flex flex-wrap gap-1.5 pt-2">
                   {work.tech.map((t) => (
                     <span
                       key={t}
-                      className="font-mono text-[11px] px-2.5 py-1 rounded bg-[var(--hv-ink-12)] text-[var(--hv-ink)]"
+                      className="font-mono text-[10px] px-2.5 py-1 rounded-full border border-[var(--hv-hairline)] text-[var(--hv-ink-70)] hover:border-[var(--hv-ink)] hover:text-[var(--hv-ink)] transition-colors"
                     >
                       {t}
                     </span>

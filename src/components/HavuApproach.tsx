@@ -25,64 +25,68 @@ export default function HavuApproach() {
           </p>
         </div>
 
-        {/* Side-by-Side Comparison */}
-        <div className="grid grid-cols-1 md:grid-cols-2 border border-[var(--hv-hairline)]">
-          {/* Left: Conventional */}
-          <div className="hv-up p-8 sm:p-12 space-y-6 border-b md:border-b-0 md:border-r border-[var(--hv-hairline)]">
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-[var(--hv-muted)] block">
-              [ Conventional Development ]
-            </span>
-            <h3 className="text-2xl font-bold text-[var(--hv-ink)]">
-              Siloed &amp; Fragile
-            </h3>
-
-            <ul className="space-y-4 text-sm text-[var(--hv-ink-70)]">
-              <li className="flex items-start gap-3">
-                <span className="text-red-500 font-bold">&times;</span>
-                <span>Security reviews tacked on as an afterthought right before deployment</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-red-500 font-bold">&times;</span>
-                <span>Slow hybrid web views masquerading as native applications</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-red-500 font-bold">&times;</span>
-                <span>Unvetted third-party dependencies introducing supply chain risks</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-red-500 font-bold">&times;</span>
-                <span>Zero real-time telemetry or anomaly detection on live traffic</span>
-              </li>
-            </ul>
+        {/* HAVU-Style Hairline Comparison Table (7 Core Dimensions) */}
+        <div className="hv-up border border-[var(--hv-hairline)] overflow-hidden">
+          {/* Table Header */}
+          <div className="grid grid-cols-1 md:grid-cols-12 border-b border-[var(--hv-hairline)] bg-[var(--hv-ink-12)]">
+            <div className="md:col-span-5 p-4 sm:p-6 font-mono text-xs font-bold uppercase tracking-widest text-[var(--hv-muted)] border-b md:border-b-0 md:border-r border-[var(--hv-hairline)]">
+              [ Conventional Production Support ]
+            </div>
+            <div className="md:col-span-7 p-4 sm:p-6 font-mono text-xs font-bold uppercase tracking-widest text-[var(--hv-ink)] flex items-center justify-between">
+              <span>[ Our Integrated Defensive Model ]</span>
+              <span className="text-[10px] text-emerald-500 font-bold hidden sm:inline">ZERO-COMPROMISE</span>
+            </div>
           </div>
 
-          {/* Right: Integrated Engineered Model */}
-          <div className="hv-up p-8 sm:p-12 space-y-6 bg-[var(--hv-ink)] text-[var(--hv-on-ink)] transition-transform duration-500 hover:scale-[1.005]">
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-[var(--hv-subtle)] block">
-              [ Our Integrated Model ]
-            </span>
-            <h3 className="text-2xl font-bold">
-              Hardened &amp; 120 FPS
-            </h3>
+          {/* 7 Comparison Rows */}
+          <div className="divide-y divide-[var(--hv-hairline)]">
+            {[
+              {
+                conventional: "Builds what was requested without questioning security boundaries",
+                ours: "Frames STRIDE threat models and attack surfaces before writing code",
+              },
+              {
+                conventional: "Hands over a hybrid web-view screen or a generic scanner PDF",
+                ours: "Delivers a mathematically hardened system compiled to 120 FPS native ARM",
+              },
+              {
+                conventional: "Supplies isolated contractor hours without cross-discipline insight",
+                ours: "Supplies offensive penetration testing, architectural judgement and rapid execution",
+              },
+              {
+                conventional: "Separates mobile frontend from backend security in isolated silos",
+                ours: "Connects cryptographic protocols, secure local storage and native platform channels",
+              },
+              {
+                conventional: "Builds once and stops when the external audit finishes",
+                ours: "Deploys deep learning telemetry, forensic logging and continuous hardening",
+              },
+              {
+                conventional: "Leaves security know-how and tooling trapped outside your company",
+                ours: "Codifies defensive test suites, CI/CD gates and operational runbooks with your team",
+              },
+              {
+                conventional: "Blindly pastes generative AI code without memory or boundary safety",
+                ours: "Deploys verified ML models (98.7% accuracy) to actively classify zero-day flows",
+              },
+            ].map((row, rIdx) => (
+              <div
+                key={rIdx}
+                className="grid grid-cols-1 md:grid-cols-12 transition-colors hover:bg-[var(--hv-ink)]/[0.02]"
+              >
+                {/* Left: Conventional */}
+                <div className="md:col-span-5 p-5 sm:p-6 text-sm text-[var(--hv-ink-70)] border-b md:border-b-0 md:border-r border-[var(--hv-hairline)] flex items-start gap-3">
+                  <span className="text-red-500/70 font-mono font-bold text-base leading-none select-none">&times;</span>
+                  <span>{row.conventional}</span>
+                </div>
 
-            <ul className="space-y-4 text-sm opacity-90">
-              <li className="flex items-start gap-3">
-                <span className="text-emerald-400 font-bold">✓</span>
-                <span>Pre-emptive STRIDE threat modeling and OWASP Top 10 mitigation</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-emerald-400 font-bold">✓</span>
-                <span>Butter-smooth 60 to 120 FPS Flutter apps compiling directly to native ARM</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-emerald-400 font-bold">✓</span>
-                <span>Memory-safe backend and systems tooling engineered with Rust &amp; Dart</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-emerald-400 font-bold">✓</span>
-                <span>Continuous deep learning anomaly classification with 98.7% accuracy</span>
-              </li>
-            </ul>
+                {/* Right: Our Model */}
+                <div className="md:col-span-7 p-5 sm:p-6 text-sm text-[var(--hv-ink)] font-medium flex items-start gap-3 bg-[var(--hv-ink-12)]/40">
+                  <span className="text-emerald-500 font-mono font-bold text-base leading-none select-none">✓</span>
+                  <span>{row.ours}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

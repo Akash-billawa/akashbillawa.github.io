@@ -104,7 +104,7 @@ export default function HavuCapabilities() {
                 {cap.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="font-mono text-[11px] px-2 py-0.5 rounded bg-[var(--hv-ink-12)] text-[var(--hv-ink)] transition-colors hover:bg-[var(--hv-ink)] hover:text-[var(--hv-on-ink)]"
+                    className="font-mono text-[10px] px-2.5 py-1 rounded-full border border-[var(--hv-hairline)] text-[var(--hv-ink-70)] hover:border-[var(--hv-ink)] hover:text-[var(--hv-ink)] hover:bg-[var(--hv-ink-12)] transition-colors"
                   >
                     {skill}
                   </span>
