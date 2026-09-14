@@ -1,6 +1,7 @@
 "use client";
 
 import HavuHero from "@/components/HavuHero";
+import HavuMarquee from "@/components/HavuMarquee";
 import HavuIssue from "@/components/HavuIssue";
 import HavuApproach from "@/components/HavuApproach";
 import HavuBlueprint from "@/components/HavuBlueprint";
@@ -20,6 +21,9 @@ export default function Home() {
     <div className="w-full bg-[var(--hv-paper)] text-[var(--hv-ink)] min-h-screen">
       {/* 00 — Hero / Main Visual */}
       <HavuHero />
+
+      {/* Technical Axiom Editorial Ticker Marquee */}
+      <HavuMarquee />
 
       {/* 01 — The Issue (6 Core Challenges) */}
       <HavuIssue />

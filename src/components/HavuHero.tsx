@@ -10,33 +10,68 @@ export default function HavuHero() {
       id="mainVisual"
       data-reveal="true"
       data-reveal-stagger="75"
-      className="relative w-full min-h-[92vh] px-6 sm:px-12 pt-12 pb-16 flex flex-col justify-between overflow-hidden"
+      className="hv-grain relative w-full min-h-[92vh] px-6 sm:px-12 pt-12 pb-16 flex flex-col justify-between overflow-hidden"
     >
       {/* Top Kicker Bar */}
-      <div className="w-full flex items-start justify-between gap-4 pt-2">
+      <div className="w-full flex items-start justify-between gap-4 pt-2 relative z-10">
         <div className="hv-fade hv-kicker">
           <span className="w-1.5 h-1.5 bg-[var(--hv-ink)] rounded-full hv-twinkle"></span>
           <span>Cyber Security &amp; Mobile Engineer</span>
         </div>
         <div className="hv-fade hv-kicker hidden md:flex items-center gap-2">
-          <span>Bangalore — India / MSc Active</span>
+          <span>Bangalore [12.9716° N, 77.5946° E] — MSc Active</span>
         </div>
       </div>
 
-      {/* Hero Massive Editorial Headline (HAVU exact visual weight) */}
-      <div className="my-auto py-8 sm:py-16 relative">
+      {/* Hero Massive Editorial Headline (HAVU exact visual weight with word cascade) */}
+      <div className="my-auto py-8 sm:py-16 relative z-10">
         <h1
           className="hv-hero-title max-w-6xl tracking-[-0.04em]"
           aria-label="I don't just build apps. I engineer secure systems that withstand the real world."
         >
-          <span className="hv-mask">
-            <span>I don&apos;t just build apps.</span>
+          {/* Line 1: I don't just build apps. */}
+          <span className="hv-mask" aria-hidden="true">
+            <span className="flex flex-wrap gap-x-[0.25em]">
+              {["I", "don't", "just", "build", "apps."].map((word, wIdx) => (
+                <span
+                  key={wIdx}
+                  className="hv-piece inline-block"
+                  style={{ "--pd": `${wIdx * 35}ms` } as React.CSSProperties}
+                >
+                  {word}
+                </span>
+              ))}
+            </span>
           </span>
-          <span className="hv-mask text-[var(--hv-ink-70)]">
-            <span>I engineer secure systems</span>
+
+          {/* Line 2: I engineer secure systems */}
+          <span className="hv-mask text-[var(--hv-ink-70)]" aria-hidden="true">
+            <span className="flex flex-wrap gap-x-[0.25em]">
+              {["I", "engineer", "secure", "systems"].map((word, wIdx) => (
+                <span
+                  key={wIdx}
+                  className="hv-piece inline-block"
+                  style={{ "--pd": `${(wIdx + 5) * 35}ms` } as React.CSSProperties}
+                >
+                  {word}
+                </span>
+              ))}
+            </span>
           </span>
-          <span className="hv-mask">
-            <span>that withstand the real world.</span>
+
+          {/* Line 3: that withstand the real world. */}
+          <span className="hv-mask" aria-hidden="true">
+            <span className="flex flex-wrap gap-x-[0.25em]">
+              {["that", "withstand", "the", "real", "world."].map((word, wIdx) => (
+                <span
+                  key={wIdx}
+                  className="hv-piece inline-block"
+                  style={{ "--pd": `${(wIdx + 9) * 35}ms` } as React.CSSProperties}
+                >
+                  {word}
+                </span>
+              ))}
+            </span>
           </span>
         </h1>
 
@@ -75,34 +110,44 @@ export default function HavuHero() {
           </button>
 
           {pixelActive && (
-            <div className="absolute top-12 -left-12 w-48 p-2.5 rounded-lg border border-[var(--hv-hairline)] bg-[var(--hv-paper)] shadow-xl text-[10px] font-mono text-[var(--hv-ink)] animate-in fade-in zoom-in-95">
-              <span className="font-bold block text-emerald-500">✓ TELEMETRY ONLINE</span>
-              <span>Memory: Clean · Impeller: 120fps · OWASP: Compliant</span>
+            <div className="absolute top-12 -left-16 w-56 p-3 rounded-lg border border-[var(--hv-hairline)] bg-[var(--hv-paper)] shadow-2xl text-[10px] font-mono text-[var(--hv-ink)] animate-in fade-in zoom-in-95 z-30">
+              <div className="flex items-center justify-between pb-1 border-b border-[var(--hv-hairline)] mb-1.5">
+                <span className="font-bold text-emerald-500">✓ TELEMETRY V2</span>
+                <span className="text-[9px] text-[var(--hv-muted)]">BLR_NODE</span>
+              </div>
+              <p className="leading-relaxed text-[var(--hv-ink-70)]">
+                Impeller ARM: 120.0 FPS<br />
+                Memory Leak: 0.00 MB<br />
+                Threat Vector: 0 Exposed<br />
+                TLS Protocol: 1.3 Strict
+              </p>
             </div>
           )}
         </div>
       </div>
 
-      {/* Hairline divider with pixel walker */}
-      <div className="relative w-full border-t border-[var(--hv-hairline)] pt-8">
-        {/* Pixel sprite standing and stepping on line */}
+      {/* Hairline divider with traversing pixel walker */}
+      <div className="relative w-full border-t border-[var(--hv-hairline)] pt-8 z-10">
+        {/* Pixel sprite walking back and forth along the divider */}
         <div
           aria-hidden="true"
-          className="absolute -top-6 left-8 select-none pointer-events-none text-[var(--hv-ink)] hv-sprite-stepping"
+          className="absolute -top-6 select-none pointer-events-none text-[var(--hv-ink)] hv-sprite-traversal"
         >
-          <svg
-            viewBox="0 0 16 16"
-            className="w-6 h-6"
-            fill="currentColor"
-            shapeRendering="crispEdges"
-          >
-            <rect x="6" y="1" width="4" height="4" />
-            <rect x="5" y="5" width="6" height="5" />
-            <rect x="3" y="6" width="2" height="4" />
-            <rect x="11" y="6" width="2" height="4" />
-            <rect x="5" y="10" width="2" height="5" />
-            <rect x="9" y="10" width="2" height="5" />
-          </svg>
+          <div className="hv-sprite-stepping">
+            <svg
+              viewBox="0 0 16 16"
+              className="w-6 h-6"
+              fill="currentColor"
+              shapeRendering="crispEdges"
+            >
+              <rect x="6" y="1" width="4" height="4" />
+              <rect x="5" y="5" width="6" height="5" />
+              <rect x="3" y="6" width="2" height="4" />
+              <rect x="11" y="6" width="2" height="4" />
+              <rect x="5" y="10" width="2" height="5" />
+              <rect x="9" y="10" width="2" height="5" />
+            </svg>
+          </div>
         </div>
 
         {/* Bottom Hero Narrative & CTA */}
@@ -117,7 +162,7 @@ export default function HavuHero() {
             <a
               href="#work"
               data-cursor="link"
-              className="px-6 py-3 rounded-full bg-[var(--hv-ink)] text-[var(--hv-on-ink)] text-xs font-bold uppercase tracking-wider hover:opacity-85 transition-opacity"
+              className="px-6 py-3 rounded-full bg-[var(--hv-ink)] text-[var(--hv-on-ink)] text-xs font-bold uppercase tracking-wider hover:opacity-85 transition-opacity inline-flex items-center"
             >
               <span className="hv-swap">
                 <span>Selected Works &rarr;</span>
@@ -128,7 +173,7 @@ export default function HavuHero() {
             <a
               href="#contact"
               data-cursor="link"
-              className="px-5 py-3 rounded-full border border-[var(--hv-ink-25)] hover:border-[var(--hv-ink)] text-xs font-bold uppercase tracking-wider text-[var(--hv-ink)] transition-colors"
+              className="px-5 py-3 rounded-full border border-[var(--hv-ink-25)] hover:border-[var(--hv-ink)] text-xs font-bold uppercase tracking-wider text-[var(--hv-ink)] transition-colors inline-flex items-center"
             >
               <span className="hv-swap">
                 <span>Get in touch</span>

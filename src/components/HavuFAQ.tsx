@@ -99,11 +99,15 @@ export default function HavuFAQ() {
                   </span>
                 </button>
 
-                {isOpen && (
-                  <div className="pt-4 pl-8 sm:pl-10 text-sm sm:text-base text-[var(--hv-ink-70)] leading-relaxed max-w-3xl animate-in fade-in duration-300">
+                <div
+                  className={`grid transition-[grid-template-rows,opacity,padding] duration-400 ease-[var(--hv-ease)] ${
+                    isOpen ? "grid-rows-[1fr] opacity-100 pt-4" : "grid-rows-[0fr] opacity-0 pt-0"
+                  }`}
+                >
+                  <div className="overflow-hidden pl-8 sm:pl-10 text-sm sm:text-base text-[var(--hv-ink-70)] leading-relaxed max-w-3xl">
                     {faq.a}
                   </div>
-                )}
+                </div>
               </div>
             );
           })}

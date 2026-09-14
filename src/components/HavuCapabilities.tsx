@@ -43,6 +43,13 @@ const capabilities: Capability[] = [
       "Integrating continuous security linting, hardened Docker containerization, automated vulnerability scans, and cryptographic integrity into continuous integration pipelines.",
     skills: ["Docker", "CI/CD Security", "Git", "TLS / Cryptography", "Container Audits"],
   },
+  {
+    number: "06",
+    title: "Cryptographic Protocols & Zero-Trust Defense",
+    subtitle:
+      "Implementing end-to-end TLS 1.3 session integrity, hardware-backed keystores on iOS/Android, and distributed authentication boundaries across zero-trust network topologies.",
+    skills: ["TLS 1.3", "Zero-Trust", "Hardware Keychains", "OAuth2 / JWT", "eBPF / libpcap"],
+  },
 ];
 
 export default function HavuCapabilities() {
@@ -62,7 +69,7 @@ export default function HavuCapabilities() {
           </div>
 
           <h2 className="hv-mask hv-display-jp text-3xl sm:text-5xl md:text-6xl font-extrabold max-w-4xl">
-            <span>Five core disciplines in one process.</span>
+            <span>Six core disciplines in one unified loop.</span>
           </h2>
 
           <p className="hv-up hv-lead max-w-3xl">

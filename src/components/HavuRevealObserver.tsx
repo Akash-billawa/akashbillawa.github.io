@@ -32,7 +32,7 @@ export function HavuRevealObserver() {
 
       const stagger = Number(node.dataset.revealStagger ?? 75);
       const targets = node.querySelectorAll<HTMLElement>(
-        ".hv-mask, .hv-clip, .hv-up, .hv-wipe, .hv-rule, .hv-fade, .hv-draw-line"
+        ".hv-mask, .hv-clip, .hv-up, .hv-wipe, .hv-rule, .hv-fade, .hv-draw-line, .hv-piece"
       );
 
       let idx = 0;

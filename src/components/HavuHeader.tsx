@@ -21,11 +21,29 @@ export default function HavuHeader() {
   const [isDark, setIsDark] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
     setMounted(true);
     const hasDark = document.documentElement.classList.contains("dark");
     setIsDark(hasDark);
+
+    const sectionIds = ["issue", "approach", "blueprint", "skills", "work", "process", "faq"];
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 200;
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el && el.offsetTop <= scrollPos) {
+          setActiveSection(sectionIds[i]);
+          return;
+        }
+      }
+      setActiveSection("");
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleTheme = () => {
@@ -63,14 +81,21 @@ export default function HavuHeader() {
         {/* Desktop Quick Nav Links (HAVU subset) */}
         <nav className="hidden xl:flex items-center gap-8 text-sm font-semibold tracking-tight text-[var(--hv-ink)]">
           {["Issue", "Approach", "Blueprint", "Works", "Process", "FAQ"].map((name) => {
-            const href = name === "Works" ? "#work" : `#${name.toLowerCase()}`;
+            const sectionId = name === "Works" ? "work" : name.toLowerCase();
+            const href = `#${sectionId}`;
+            const isActive = activeSection === sectionId;
             return (
               <a
                 key={name}
                 href={href}
                 data-cursor="link"
-                className="group text-xs font-bold tracking-wide uppercase text-[var(--hv-ink-70)] hover:text-[var(--hv-ink)] transition-colors py-1"
+                className={`group text-xs font-bold tracking-wide uppercase transition-colors py-1 flex items-center gap-1.5 ${
+                  isActive ? "text-[var(--hv-ink)]" : "text-[var(--hv-ink-70)] hover:text-[var(--hv-ink)]"
+                }`}
               >
+                {isActive && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--hv-ink)] inline-block" />
+                )}
                 <span className="hv-swap">
                   <span>{name}</span>
                   <span aria-hidden="true">{name}</span>

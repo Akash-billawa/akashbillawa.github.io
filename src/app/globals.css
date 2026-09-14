@@ -323,8 +323,101 @@ a:hover .hv-swap > span:last-child,
   }
 }
 
+@keyframes hv-sprite-walk {
+  0% {
+    left: 2rem;
+  }
+  100% {
+    left: calc(100% - 4rem);
+  }
+}
+
 .hv-sprite-stepping {
-  animation: hv-sprite-step 0.4s infinite steps(2);
+  animation: hv-sprite-step 0.35s infinite steps(2);
+}
+
+.hv-sprite-traversal {
+  animation: hv-sprite-walk 28s linear infinite alternate;
+}
+
+/* 11. Word Piece Cascade */
+.hv-piece {
+  display: inline-block;
+  transform: translateY(125%);
+  opacity: 0;
+  transition: transform var(--hv-dur) var(--hv-ease), opacity var(--hv-dur) var(--hv-ease);
+  transition-delay: var(--pd, 0ms);
+  will-change: transform, opacity;
+}
+
+.is-in .hv-piece,
+.hv-piece.is-in {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* 12. Analog Film Grain Texture */
+.hv-grain {
+  position: relative;
+}
+
+.hv-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.032;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.dark .hv-grain::after {
+  opacity: 0.055;
+  filter: invert(1);
+}
+
+/* 13. Infinite Editorial Marquee Ticker */
+@keyframes hv-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.hv-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+
+.hv-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: hv-marquee var(--hv-marquee-dur, 35s) linear infinite;
+  will-change: transform;
+}
+
+.hv-marquee:hover .hv-marquee-track {
+  animation-play-state: paused;
+}
+
+/* 14. Radar Beam Scan */
+@keyframes hv-radar-sweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hv-radar-beam {
+  transform-origin: center;
+  animation: hv-radar-sweep 4s linear infinite;
 }
 
 /* 11. Custom Reactive Cursor Follower */
