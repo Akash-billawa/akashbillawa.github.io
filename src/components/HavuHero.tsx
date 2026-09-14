@@ -13,13 +13,69 @@ export default function HavuHero() {
       className="hv-grain relative w-full min-h-[92vh] px-6 sm:px-12 pt-12 pb-16 flex flex-col justify-between overflow-hidden"
     >
       {/* Top Kicker Bar */}
-      <div className="w-full flex items-start justify-between gap-4 pt-2 relative z-10">
+      {/* Top Kicker Bar with Telemetry UFO Probe */}
+      <div className="w-full flex items-center justify-between gap-4 pt-2 relative z-10">
         <div className="hv-fade hv-kicker">
           <span className="w-1.5 h-1.5 bg-[var(--hv-ink)] rounded-full hv-twinkle"></span>
           <span>Cyber Security &amp; Mobile Engineer</span>
         </div>
-        <div className="hv-fade hv-kicker hidden md:flex items-center gap-2">
+        
+        <div className="hv-fade hv-kicker hidden md:flex items-center gap-3">
           <span>Bangalore [12.9716° N, 77.5946° E] — MSc Active</span>
+          <span className="text-[var(--hv-hairline)]" aria-hidden="true">/</span>
+
+          {/* Interactive Pixel UFO / Satellite Telemetry Probe */}
+          <div className="relative select-none flex items-center">
+            <button
+              onClick={() => setPixelActive(!pixelActive)}
+              data-cursor="link"
+              className="group flex items-center focus:outline-none cursor-pointer p-1 rounded hover:bg-[var(--hv-ink-12)] transition-colors"
+              title="Toggle interactive telemetry probe"
+              aria-label="Toggle interactive telemetry probe"
+            >
+              <svg
+                viewBox="0 0 21 8"
+                className="w-10 h-4 text-[var(--hv-ink)] group-hover:translate-y-[-1px] transition-transform hv-drift"
+                fill="currentColor"
+                shapeRendering="crispEdges"
+              >
+                <rect x="8" y="0" width="5" height="1" />
+                <rect x="7" y="1" width="1" height="1" />
+                <rect x="9" y="1" width="3" height="1" />
+                <rect x="13" y="1" width="1" height="1" />
+                <rect x="6" y="2" width="1" height="1" />
+                <rect x="10" y="2" width="1" height="1" />
+                <rect x="14" y="2" width="1" height="1" />
+                <rect x="2" y="3" width="17" height="1" />
+                <rect x="0" y="4" width="21" height="1" />
+                <rect x="2" y="5" width="17" height="1" />
+                <rect x="5" y="6" width="11" height="1" />
+                <rect x="7" y="7" width="1" height="1" />
+                <rect x="10" y="7" width="1" height="1" />
+                <rect x="13" y="7" width="1" height="1" />
+              </svg>
+            </button>
+
+            {/* Interactive Popover */}
+            {pixelActive && (
+              <div className="absolute top-8 right-0 w-60 p-3 rounded-lg border border-[var(--hv-hairline)] bg-[var(--hv-paper)] shadow-2xl text-[10px] font-mono text-[var(--hv-ink)] animate-in fade-in zoom-in-95 duration-200 z-30">
+                <div className="flex items-center justify-between pb-1.5 border-b border-[var(--hv-hairline)] mb-2">
+                  <span className="font-bold text-emerald-500 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    TELEMETRY V2
+                  </span>
+                  <span className="text-[9px] text-[var(--hv-muted)]">[BLR_NODE]</span>
+                </div>
+                <div className="space-y-1 text-[11px] text-[var(--hv-ink-70)] leading-tight">
+                  <p>Runtime: <span className="text-[var(--hv-ink)] font-semibold">Flutter Impeller ARM</span></p>
+                  <p>FPS: <span className="text-emerald-500 font-semibold">120.0 (0 drops)</span></p>
+                  <p>Memory: <span className="text-emerald-500 font-semibold">0 MB Leaks</span></p>
+                  <p>Defense: <span className="text-[var(--hv-ink)] font-semibold">TLS 1.3 Strict</span></p>
+                  <p>Threat Vector: <span className="text-emerald-500 font-semibold">0 Exposed</span></p>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
@@ -74,56 +130,6 @@ export default function HavuHero() {
             </span>
           </span>
         </h1>
-
-        {/* Interactive Pixel UFO / Satellite Graphic (HAVU signature easter-egg) */}
-        <div className="absolute -top-4 right-4 sm:right-16 select-none hidden sm:block hv-fade">
-          <button
-            onClick={() => setPixelActive(!pixelActive)}
-            data-cursor="link"
-            className="group flex flex-col items-center focus:outline-none cursor-pointer"
-            title="Interactive pixel telemetry probe"
-          >
-            <svg
-              viewBox="0 0 21 8"
-              className="w-14 h-6 text-[var(--hv-ink)] group-hover:translate-y-[-2px] transition-transform hv-drift"
-              fill="currentColor"
-              shapeRendering="crispEdges"
-            >
-              <rect x="8" y="0" width="5" height="1" />
-              <rect x="7" y="1" width="1" height="1" />
-              <rect x="9" y="1" width="3" height="1" />
-              <rect x="13" y="1" width="1" height="1" />
-              <rect x="6" y="2" width="1" height="1" />
-              <rect x="10" y="2" width="1" height="1" />
-              <rect x="14" y="2" width="1" height="1" />
-              <rect x="2" y="3" width="17" height="1" />
-              <rect x="0" y="4" width="21" height="1" />
-              <rect x="2" y="5" width="17" height="1" />
-              <rect x="5" y="6" width="11" height="1" />
-              <rect x="7" y="7" width="1" height="1" />
-              <rect x="10" y="7" width="1" height="1" />
-              <rect x="13" y="7" width="1" height="1" />
-            </svg>
-            <span className="font-mono text-[9px] uppercase tracking-widest text-[var(--hv-muted)] opacity-0 group-hover:opacity-100 transition-opacity mt-1">
-              [ PROBE ACTIVE ]
-            </span>
-          </button>
-
-          {pixelActive && (
-            <div className="absolute top-12 -left-16 w-56 p-3 rounded-lg border border-[var(--hv-hairline)] bg-[var(--hv-paper)] shadow-2xl text-[10px] font-mono text-[var(--hv-ink)] animate-in fade-in zoom-in-95 z-30">
-              <div className="flex items-center justify-between pb-1 border-b border-[var(--hv-hairline)] mb-1.5">
-                <span className="font-bold text-emerald-500">✓ TELEMETRY V2</span>
-                <span className="text-[9px] text-[var(--hv-muted)]">BLR_NODE</span>
-              </div>
-              <p className="leading-relaxed text-[var(--hv-ink-70)]">
-                Impeller ARM: 120.0 FPS<br />
-                Memory Leak: 0.00 MB<br />
-                Threat Vector: 0 Exposed<br />
-                TLS Protocol: 1.3 Strict
-              </p>
-            </div>
-          )}
-        </div>
       </div>
 
       {/* Hairline divider with traversing pixel walker */}
