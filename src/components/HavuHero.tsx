@@ -86,48 +86,18 @@ export default function HavuHero() {
           aria-label="I don't just build apps. I engineer secure systems that withstand the real world."
         >
           {/* Line 1: I don't just build apps. */}
-          <span className="hv-mask" aria-hidden="true">
-            <span className="flex flex-wrap gap-x-[0.25em]">
-              {["I", "don't", "just", "build", "apps."].map((word, wIdx) => (
-                <span
-                  key={wIdx}
-                  className="hv-piece inline-block"
-                  style={{ "--pd": `${wIdx * 35}ms` } as React.CSSProperties}
-                >
-                  {word}
-                </span>
-              ))}
-            </span>
+          <span className="hv-mask block" aria-hidden="true">
+            <span className="block">I don&apos;t just build apps.</span>
           </span>
 
           {/* Line 2: I engineer secure systems */}
-          <span className="hv-mask text-[var(--hv-ink-70)]" aria-hidden="true">
-            <span className="flex flex-wrap gap-x-[0.25em]">
-              {["I", "engineer", "secure", "systems"].map((word, wIdx) => (
-                <span
-                  key={wIdx}
-                  className="hv-piece inline-block"
-                  style={{ "--pd": `${(wIdx + 5) * 35}ms` } as React.CSSProperties}
-                >
-                  {word}
-                </span>
-              ))}
-            </span>
+          <span className="hv-mask block text-[var(--hv-ink-70)]" aria-hidden="true">
+            <span className="block">I engineer secure systems</span>
           </span>
 
           {/* Line 3: that withstand the real world. */}
-          <span className="hv-mask" aria-hidden="true">
-            <span className="flex flex-wrap gap-x-[0.25em]">
-              {["that", "withstand", "the", "real", "world."].map((word, wIdx) => (
-                <span
-                  key={wIdx}
-                  className="hv-piece inline-block"
-                  style={{ "--pd": `${(wIdx + 9) * 35}ms` } as React.CSSProperties}
-                >
-                  {word}
-                </span>
-              ))}
-            </span>
+          <span className="hv-mask block" aria-hidden="true">
+            <span className="block">that withstand the real world.</span>
           </span>
         </h1>
       </div>
