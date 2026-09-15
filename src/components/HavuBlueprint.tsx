@@ -27,7 +27,13 @@ export default function HavuBlueprint() {
 
         {/* Blueprint Diagram Card */}
         <div className="hv-up border border-[var(--hv-hairline)] p-4 sm:p-8 bg-[var(--hv-paper)] overflow-x-auto">
-          <div className="min-w-[960px]">
+          {/* Mobile swipe prompt */}
+          <div className="flex md:hidden items-center justify-between pb-3 mb-3 border-b border-[var(--hv-hairline)] font-mono text-[10px] text-[var(--hv-muted)]">
+            <span>[ HORIZONTAL BLUEPRINT // DRAG TO PAN ]</span>
+            <span>&rarr;</span>
+          </div>
+
+          <div className="min-w-[1020px]">
             {/* Blueprint Titlebar */}
             <div className="flex items-center justify-between border-b border-[var(--hv-hairline)] pb-4 mb-6 font-mono text-xs text-[var(--hv-muted)]">
               <span className="font-bold tracking-widest text-[var(--hv-ink)]">
@@ -36,10 +42,10 @@ export default function HavuBlueprint() {
               <span>CONTINUOUS DEFENSE &amp; NATIVE PERFORMANCE ENGINE</span>
             </div>
 
-            {/* SVG Diagram - Exact HAVU Proportions (1344 x 748) */}
+            {/* SVG Diagram - Mathematically Balanced (1440 x 560) */}
             <svg
-              viewBox="48 0 1344 748"
-              className="w-full h-auto text-[var(--hv-ink)] select-none font-mono"
+              viewBox="0 0 1440 560"
+              className="w-full h-auto text-[var(--hv-ink)] select-none"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -57,38 +63,30 @@ export default function HavuBlueprint() {
                 </marker>
               </defs>
 
-              {/* Blueprint Subtitle & Scope inside SVG */}
-              <g className="hv-fade">
-                <text x="48" y="46" fontSize="12" fontWeight="700" letterSpacing="2.4" fill="var(--hv-muted)">
-                  AKASH / SYSTEM ARCHITECTURE SPEC
-                </text>
-                <text x="48" y="96" fontSize="32" fontWeight="900" letterSpacing="-0.5" fill="var(--hv-ink)" fontFamily="var(--font-sans)">
-                  Continuous Defense &amp; Native Compilation Loop
-                </text>
-                <text x="48" y="130" fontSize="15" fill="var(--hv-ink-70)" fontFamily="var(--font-sans)">
-                  Pre-emptive threat modeling feeds native 120 FPS compilation, returning real-world telemetry into continuous defense.
-                </text>
-              </g>
+              {/* Column 1 Header */}
+              <text x="48" y="38" fontSize="12" fontWeight="700" letterSpacing="2.2" fill="var(--hv-muted)" fontFamily="var(--font-mono)">
+                01 — DISCIPLINES
+              </text>
+              <path d="M 48 54 L 392 54" stroke="var(--hv-hairline)" strokeWidth="1.2" />
 
-              {/* Main Divider Line */}
-              <path d="M 48 166 L 1392 166" stroke="var(--hv-ink)" strokeWidth="1.6" className="hv-draw-line" style={{ "--len": 1344 } as React.CSSProperties} />
+              {/* Column 2 Header */}
+              <text x="720" y="38" fontSize="12" fontWeight="700" letterSpacing="2.2" textAnchor="middle" fill="var(--hv-muted)" fontFamily="var(--font-mono)">
+                02 — THE CORE OPERATING LOOP
+              </text>
+              <circle cx="720" cy="54" r="3" fill="var(--hv-ink)" />
 
-              {/* Section Column Headers */}
-              <g className="hv-fade" fontSize="12" fontWeight="700" letterSpacing="2.4" fill="var(--hv-muted)">
-                <text x="48" y="212">01 — DISCIPLINES</text>
-                <text x="540" y="212">02 — THE CORE OPERATING LOOP</text>
-                <text x="1144" y="212">03 — ACCUMULATED VALUE</text>
-              </g>
+              {/* Column 3 Header */}
+              <text x="1048" y="38" fontSize="12" fontWeight="700" letterSpacing="2.2" fill="var(--hv-muted)" fontFamily="var(--font-mono)">
+                03 — ACCUMULATED VALUE
+              </text>
+              <path d="M 1048 54 L 1392 54" stroke="var(--hv-hairline)" strokeWidth="1.2" />
 
               {/* ================= COLUMN 1: DISCIPLINES (Left) ================= */}
-              {/* Row 1: Security Defense */}
-              <g className="hv-fade" style={{ "--d": "120ms" } as React.CSSProperties}>
-                <path d="M 48 246 L 440 246" stroke="var(--hv-ink)" strokeWidth="1.6" className="hv-draw-line" style={{ "--len": 392, "--d": "120ms" } as React.CSSProperties} />
-                <text x="48" y="272" fontSize="11" fontWeight="700" letterSpacing="2" fill="var(--hv-muted)">
-                  SECURITY DEFENSE
-                </text>
+              {/* Card 1: Security Defense */}
+              <g className="hv-fade" style={{ "--d": "100ms" } as React.CSSProperties}>
+                <rect x="48" y="78" width="344" height="126" rx="4" stroke="var(--hv-hairline)" strokeWidth="1.2" fill="var(--hv-paper)" />
                 {/* Pixel Shield Icon */}
-                <g transform="translate(56 292) scale(4)" fill="var(--hv-ink)" shapeRendering="crispEdges">
+                <g transform="translate(64 96) scale(2.8)" fill="var(--hv-ink)" shapeRendering="crispEdges">
                   <rect x="2" y="1" width="12" height="1" />
                   <rect x="1" y="2" width="14" height="2" />
                   <rect x="1" y="4" width="14" height="4" />
@@ -97,22 +95,25 @@ export default function HavuBlueprint() {
                   <rect x="5" y="12" width="6" height="2" />
                   <rect x="7" y="14" width="2" height="2" />
                 </g>
-                <text x="140" y="320" fontSize="18" fontWeight="800" fill="var(--hv-ink)" fontFamily="var(--font-sans)">
+                <text x="120" y="105" fontSize="10.5" fontWeight="700" letterSpacing="1.8" fill="var(--hv-muted)" fontFamily="var(--font-mono)">
+                  SECURITY DEFENSE
+                </text>
+                <text x="120" y="128" fontSize="16" fontWeight="800" fill="var(--hv-ink)" fontFamily="var(--font-sans)">
                   Penetration Testing &amp; Audits
                 </text>
-                <text x="140" y="346" fontSize="12.5" fill="var(--hv-ink-70)">
-                  OWASP Top 10 · Burp Suite Pro · STRIDE Threat Models
+                <text x="120" y="152" fontSize="11" fill="var(--hv-ink-70)" fontFamily="var(--font-mono)">
+                  OWASP Top 10 · Burp Suite · STRIDE
+                </text>
+                <text x="120" y="172" fontSize="10.5" fill="var(--hv-muted)" fontFamily="var(--font-mono)">
+                  Memory defense &amp; zero-day audits
                 </text>
               </g>
 
-              {/* Row 2: Mobile Engineering */}
-              <g className="hv-fade" style={{ "--d": "200ms" } as React.CSSProperties}>
-                <path d="M 48 418 L 440 418" stroke="var(--hv-ink)" strokeWidth="1.6" className="hv-draw-line" style={{ "--len": 392, "--d": "200ms" } as React.CSSProperties} />
-                <text x="48" y="444" fontSize="11" fontWeight="700" letterSpacing="2" fill="var(--hv-muted)">
-                  MOBILE ENGINEERING
-                </text>
+              {/* Card 2: Mobile Engineering */}
+              <g className="hv-fade" style={{ "--d": "180ms" } as React.CSSProperties}>
+                <rect x="48" y="222" width="344" height="126" rx="4" stroke="var(--hv-hairline)" strokeWidth="1.2" fill="var(--hv-paper)" />
                 {/* Pixel Phone Icon */}
-                <g transform="translate(60 464) scale(4)" fill="var(--hv-ink)" shapeRendering="crispEdges">
+                <g transform="translate(68 238) scale(2.8)" fill="var(--hv-ink)" shapeRendering="crispEdges">
                   <rect x="4" y="1" width="8" height="1" />
                   <rect x="3" y="2" width="10" height="1" />
                   <rect x="3" y="3" width="10" height="10" />
@@ -120,22 +121,25 @@ export default function HavuBlueprint() {
                   <rect x="4" y="14" width="8" height="1" />
                   <rect x="7" y="12" width="2" height="1" fill="var(--hv-paper)" />
                 </g>
-                <text x="140" y="492" fontSize="18" fontWeight="800" fill="var(--hv-ink)" fontFamily="var(--font-sans)">
+                <text x="120" y="249" fontSize="10.5" fontWeight="700" letterSpacing="1.8" fill="var(--hv-muted)" fontFamily="var(--font-mono)">
+                  MOBILE ENGINEERING
+                </text>
+                <text x="120" y="272" fontSize="16" fontWeight="800" fill="var(--hv-ink)" fontFamily="var(--font-sans)">
                   Flutter &amp; Dart Architecture
                 </text>
-                <text x="140" y="518" fontSize="12.5" fill="var(--hv-ink-70)">
-                  60–120 FPS Fluidity · Riverpod · Impeller ARM Compiler
+                <text x="120" y="296" fontSize="11" fill="var(--hv-ink-70)" fontFamily="var(--font-mono)">
+                  60–120 FPS · Riverpod · Impeller ARM
+                </text>
+                <text x="120" y="316" fontSize="10.5" fill="var(--hv-muted)" fontFamily="var(--font-mono)">
+                  Hardware keystores &amp; TLS 1.3 pinning
                 </text>
               </g>
 
-              {/* Row 3: Systems & AI */}
-              <g className="hv-fade" style={{ "--d": "280ms" } as React.CSSProperties}>
-                <path d="M 48 590 L 440 590" stroke="var(--hv-ink)" strokeWidth="1.6" className="hv-draw-line" style={{ "--len": 392, "--d": "280ms" } as React.CSSProperties} />
-                <text x="48" y="616" fontSize="11" fontWeight="700" letterSpacing="2" fill="var(--hv-muted)">
-                  SYSTEMS &amp; MACHINE LEARNING
-                </text>
+              {/* Card 3: Systems & AI */}
+              <g className="hv-fade" style={{ "--d": "260ms" } as React.CSSProperties}>
+                <rect x="48" y="366" width="344" height="126" rx="4" stroke="var(--hv-hairline)" strokeWidth="1.2" fill="var(--hv-paper)" />
                 {/* Pixel Terminal / CPU Icon */}
-                <g transform="translate(56 636) scale(4)" fill="var(--hv-ink)" shapeRendering="crispEdges">
+                <g transform="translate(65 382) scale(2.8)" fill="var(--hv-ink)" shapeRendering="crispEdges">
                   <rect x="2" y="2" width="12" height="12" />
                   <rect x="4" y="4" width="8" height="8" fill="var(--hv-paper)" />
                   <rect x="6" y="6" width="4" height="4" fill="var(--hv-ink)" />
@@ -144,180 +148,183 @@ export default function HavuBlueprint() {
                   <rect x="0" y="7" width="2" height="2" />
                   <rect x="14" y="7" width="2" height="2" />
                 </g>
-                <text x="140" y="664" fontSize="18" fontWeight="800" fill="var(--hv-ink)" fontFamily="var(--font-sans)">
+                <text x="120" y="393" fontSize="10.5" fontWeight="700" letterSpacing="1.8" fill="var(--hv-muted)" fontFamily="var(--font-mono)">
+                  SYSTEMS &amp; MACHINE LEARNING
+                </text>
+                <text x="120" y="416" fontSize="16" fontWeight="800" fill="var(--hv-ink)" fontFamily="var(--font-sans)">
                   Deep Learning Telemetry
                 </text>
-                <text x="140" y="690" fontSize="12.5" fill="var(--hv-ink-70)">
-                  PyTorch · Rust POSIX · 98.7% Zero-Day Detection
+                <text x="120" y="440" fontSize="11" fill="var(--hv-ink-70)" fontFamily="var(--font-mono)">
+                  PyTorch · Rust POSIX · eBPF Flows
+                </text>
+                <text x="120" y="460" fontSize="10.5" fill="var(--hv-muted)" fontFamily="var(--font-mono)">
+                  98.7% zero-day intrusion detection
                 </text>
               </g>
 
-              {/* Vertical Connecting Rail and Arrow into the Operating Loop */}
-              <path d="M 464 246 L 464 738" stroke="var(--hv-ink)" strokeWidth="1.6" className="hv-draw-line" style={{ "--len": 492, "--d": "320ms" } as React.CSSProperties} />
-              <path d="M 464 492 L 580 492" fill="none" stroke="var(--hv-ink)" strokeWidth="1.6" className="hv-draw-line" style={{ "--len": 116, "--d": "420ms" } as React.CSSProperties} markerEnd="url(#bp-arrow)" />
-              <text x="522" y="478" fontSize="12" textAnchor="middle" fill="var(--hv-muted)" className="hv-fade" style={{ "--d": "480ms" } as React.CSSProperties}>
+              {/* Vertical Connecting Rail */}
+              <path d="M 416 78 L 416 492" stroke="var(--hv-hairline)" strokeWidth="1.4" />
+              {/* Drive Arrow to Operating Loop */}
+              <path d="M 416 295 L 535 295" stroke="var(--hv-ink)" strokeWidth="1.6" markerEnd="url(#bp-arrow)" className="hv-draw-line" style={{ "--len": 119, "--d": "320ms" } as React.CSSProperties} />
+              <text x="475" y="283" fontSize="10" fontWeight="700" letterSpacing="1.5" textAnchor="middle" fill="var(--hv-muted)" fontFamily="var(--font-mono)">
                 DRIVE
               </text>
 
-              {/* ================= COLUMN 2: THE OPERATING LOOP (Center) ================= */}
-              {/* Concentric Circle Guides */}
-              <circle cx="810" cy="492" r="215" fill="none" stroke="var(--hv-ink)" strokeWidth="1.6" className="hv-draw-line" style={{ "--len": 1351, "--d": "200ms" } as React.CSSProperties} />
-              <circle cx="810" cy="492" r="203" fill="none" stroke="var(--hv-ink-45)" strokeWidth="1.2" className="hv-dash-run" />
+              {/* ================= COLUMN 2: OPERATING LOOP (Center) ================= */}
+              {/* Static Outer Circle */}
+              <circle cx="720" cy="295" r="175" stroke="var(--hv-hairline)" strokeWidth="1.4" />
+              {/* Animated Running Dash Circle */}
+              <circle cx="720" cy="295" r="165" stroke="var(--hv-ink-45)" strokeWidth="1.2" className="hv-dash-run" />
 
-              {/* 5 Outer Directional Chevrons circulating around the perimeter */}
-              <g className="hv-fade" style={{ "--d": "620ms" } as React.CSSProperties}>
-                <path d="M -5 -4.5 L 5.5 0 L -5 4.5 z" fill="var(--hv-ink)" opacity="0.55" transform="translate(936.37 318.06) rotate(36)" />
-                <path d="M -5 -4.5 L 5.5 0 L -5 4.5 z" fill="var(--hv-ink)" opacity="0.55" transform="translate(1014.48 558.44) rotate(108)" />
-                <path d="M -5 -4.5 L 5.5 0 L -5 4.5 z" fill="var(--hv-ink)" opacity="0.55" transform="translate(810 707) rotate(180)" />
-                <path d="M -5 -4.5 L 5.5 0 L -5 4.5 z" fill="var(--hv-ink)" opacity="0.55" transform="translate(605.52 558.44) rotate(252)" />
-                <path d="M -5 -4.5 L 5.5 0 L -5 4.5 z" fill="var(--hv-ink)" opacity="0.55" transform="translate(683.63 318.06) rotate(324)" />
+              {/* Directional Chevrons */}
+              <g className="hv-fade" style={{ "--d": "450ms" } as React.CSSProperties}>
+                <path d="M -4 -3.5 L 4.5 0 L -4 3.5 z" fill="var(--hv-ink)" opacity="0.6" transform="translate(835 175) rotate(45)" />
+                <path d="M -4 -3.5 L 4.5 0 L -4 3.5 z" fill="var(--hv-ink)" opacity="0.6" transform="translate(835 415) rotate(135)" />
+                <path d="M -4 -3.5 L 4.5 0 L -4 3.5 z" fill="var(--hv-ink)" opacity="0.6" transform="translate(605 415) rotate(225)" />
+                <path d="M -4 -3.5 L 4.5 0 L -4 3.5 z" fill="var(--hv-ink)" opacity="0.6" transform="translate(605 175) rotate(315)" />
               </g>
 
-              {/* 5 Operating Loop Nodes - Positioned Safely OUTSIDE with Zero Line Collisions */}
-              <g className="hv-fade" style={{ "--d": "560ms" } as React.CSSProperties}>
-                {/* Node 1: Top (Threat Model) */}
-                <g>
-                  <rect x="804" y="271" width="12" height="12" fill="var(--hv-ink)" />
-                  <text x="810" y="235" fontSize="13" fontWeight="800" letterSpacing="1.6" textAnchor="middle" fill="var(--hv-ink)">
-                    1. THREAT MODEL
-                  </text>
-                  <text x="810" y="254" fontSize="11.5" textAnchor="middle" fill="var(--hv-ink-70)">
-                    Attack vectors &amp; trust boundaries
-                  </text>
-                </g>
-
-                {/* Node 2: Top-Right (Hardened Code) */}
-                <g>
-                  <rect x="1008.48" y="419.56" width="12" height="12" fill="var(--hv-ink)" />
-                  <text x="1036" y="414" fontSize="13" fontWeight="800" letterSpacing="1.6" textAnchor="start" fill="var(--hv-ink)">
-                    2. HARDENED CODE
-                  </text>
-                  <text x="1036" y="433" fontSize="11.5" textAnchor="start" fill="var(--hv-ink-70)">
-                    Memory-safe &amp; encrypted stores
-                  </text>
-                </g>
-
-                {/* Node 3: Bottom-Right (Native ARM) */}
-                <g>
-                  <rect x="930.37" y="659.94" width="12" height="12" fill="var(--hv-ink)" />
-                  <text x="958" y="694" fontSize="13" fontWeight="800" letterSpacing="1.6" textAnchor="start" fill="var(--hv-ink)">
-                    3. NATIVE ARM
-                  </text>
-                  <text x="958" y="713" fontSize="11.5" textAnchor="start" fill="var(--hv-ink-70)">
-                    120 FPS Flutter Impeller runtime
-                  </text>
-                </g>
-
-                {/* Node 4: Bottom-Left (Production Gate) */}
-                <g>
-                  <rect x="677.63" y="659.94" width="12" height="12" fill="var(--hv-ink)" />
-                  <text x="660" y="694" fontSize="13" fontWeight="800" letterSpacing="1.6" textAnchor="end" fill="var(--hv-ink)">
-                    4. PRODUCTION GATE
-                  </text>
-                  <text x="660" y="713" fontSize="11.5" textAnchor="end" fill="var(--hv-ink-70)">
-                    Automated CI/CD security tests
-                  </text>
-                </g>
-
-                {/* Node 5: Top-Left (ML Telemetry) */}
-                <g>
-                  <rect x="599.52" y="419.56" width="12" height="12" fill="var(--hv-ink)" />
-                  <text x="584" y="414" fontSize="13" fontWeight="800" letterSpacing="1.6" textAnchor="end" fill="var(--hv-ink)">
-                    5. ML TELEMETRY
-                  </text>
-                  <text x="584" y="433" fontSize="11.5" textAnchor="end" fill="var(--hv-ink-70)">
-                    98.7% zero-day anomaly detection
-                  </text>
-                </g>
-              </g>
-
-              {/* Center Engine Core Badge - HAVU 2-Tone Card */}
-              <g className="hv-fade" style={{ "--d": "700ms" } as React.CSSProperties}>
-                {/* Background Card */}
-                <rect x="690" y="404" width="240" height="176" fill="var(--hv-paper)" stroke="var(--hv-ink)" strokeWidth="1.6" />
+              {/* Center Engine Core Badge - Perfectly Sized & Centered */}
+              <g className="hv-fade" style={{ "--d": "500ms" } as React.CSSProperties}>
+                <rect x="625" y="230" width="190" height="130" rx="6" fill="var(--hv-paper)" stroke="var(--hv-ink)" strokeWidth="1.5" />
                 {/* Dark Upper Header */}
-                <rect x="690" y="404" width="240" height="92" fill="var(--hv-ink)" />
-
+                <path d="M 625 236 C 625 232.686 627.686 230 631 230 L 809 230 C 812.314 230 815 232.686 815 236 L 815 292 L 625 292 Z" fill="var(--hv-ink)" />
+                
                 {/* Top Half Text */}
-                <text x="754" y="432" fontSize="10.5" fontWeight="700" letterSpacing="1.8" fill="var(--hv-on-ink)" opacity="0.6">
-                  RUNTIME // 120.0 FPS
+                <text x="720" y="254" fontSize="9.5" fontWeight="700" letterSpacing="1.8" textAnchor="middle" fill="var(--hv-on-ink)" opacity="0.7" fontFamily="var(--font-mono)">
+                  RUNTIME // 120 FPS
                 </text>
-                <text x="754" y="456" fontSize="20" fontWeight="900" fill="var(--hv-on-ink)" fontFamily="var(--font-sans)">
+                <text x="720" y="278" fontSize="17" fontWeight="900" textAnchor="middle" fill="var(--hv-on-ink)" fontFamily="var(--font-sans)">
                   ENGINE CORE
-                </text>
-                <text x="710" y="482" fontSize="11.5" fill="var(--hv-on-ink)" opacity="0.75">
-                  Mathematical Defense &amp; Fluidity
                 </text>
 
                 {/* Bottom Half Text */}
-                <text x="710" y="520" fontSize="10.5" fontWeight="700" letterSpacing="1.8" fill="var(--hv-muted)">
+                <text x="720" y="313" fontSize="9.5" fontWeight="700" letterSpacing="1.8" textAnchor="middle" fill="var(--hv-muted)" fontFamily="var(--font-mono)">
                   ZERO-COMPROMISE
                 </text>
-                <text x="710" y="542" fontSize="15" fontWeight="800" fill="var(--hv-ink)" fontFamily="var(--font-sans)">
+                <text x="720" y="333" fontSize="13" fontWeight="800" textAnchor="middle" fill="var(--hv-ink)" fontFamily="var(--font-sans)">
                   0 MB Leaks &bull; TLS 1.3
                 </text>
-                <text x="710" y="563" fontSize="11.5" fill="var(--hv-ink-70)">
+                <text x="720" y="349" fontSize="10" textAnchor="middle" fill="var(--hv-ink-70)" fontFamily="var(--font-mono)">
                   Impeller ARM &bull; OWASP Verified
                 </text>
               </g>
 
-              {/* Connecting Arrow from Loop to Accumulation */}
-              <path d="M 1032 492 L 1130 492" fill="none" stroke="var(--hv-ink)" strokeWidth="1.6" className="hv-draw-line" style={{ "--len": 98, "--d": "760ms" } as React.CSSProperties} markerEnd="url(#bp-arrow)" />
-              <text x="1081" y="478" fontSize="12" textAnchor="middle" fill="var(--hv-muted)" className="hv-fade" style={{ "--d": "800ms" } as React.CSSProperties}>
+              {/* 4 Cardinal Nodes - Zero Collisions */}
+              {/* Node 1: Top (12 o'clock) */}
+              <g className="hv-fade" style={{ "--d": "350ms" } as React.CSSProperties}>
+                <rect x="714" y="114" width="12" height="12" rx="2" fill="var(--hv-ink)" />
+                <text x="720" y="86" fontSize="13" fontWeight="800" letterSpacing="1.5" textAnchor="middle" fill="var(--hv-ink)" fontFamily="var(--font-mono)">
+                  1. THREAT MODEL
+                </text>
+                <text x="720" y="104" fontSize="11" textAnchor="middle" fill="var(--hv-ink-70)" fontFamily="var(--font-sans)">
+                  Attack vectors &amp; trust boundaries
+                </text>
+              </g>
+
+              {/* Node 2: Right (3 o'clock) */}
+              <g className="hv-fade" style={{ "--d": "420ms" } as React.CSSProperties}>
+                <rect x="889" y="289" width="12" height="12" rx="2" fill="var(--hv-ink)" />
+                <text x="905" y="252" fontSize="13" fontWeight="800" letterSpacing="1.5" textAnchor="start" fill="var(--hv-ink)" fontFamily="var(--font-mono)">
+                  2. HARDENED CODE
+                </text>
+                <text x="905" y="270" fontSize="11" textAnchor="start" fill="var(--hv-ink-70)" fontFamily="var(--font-sans)">
+                  Memory-safe &amp; encrypted stores
+                </text>
+              </g>
+
+              {/* Node 3: Bottom (6 o'clock) */}
+              <g className="hv-fade" style={{ "--d": "490ms" } as React.CSSProperties}>
+                <rect x="714" y="464" width="12" height="12" rx="2" fill="var(--hv-ink)" />
+                <text x="720" y="496" fontSize="13" fontWeight="800" letterSpacing="1.5" textAnchor="middle" fill="var(--hv-ink)" fontFamily="var(--font-mono)">
+                  3. NATIVE COMPILATION
+                </text>
+                <text x="720" y="514" fontSize="11" textAnchor="middle" fill="var(--hv-ink-70)" fontFamily="var(--font-sans)">
+                  120 FPS Flutter Impeller runtime
+                </text>
+              </g>
+
+              {/* Node 4: Left (9 o'clock) */}
+              <g className="hv-fade" style={{ "--d": "560ms" } as React.CSSProperties}>
+                <rect x="539" y="289" width="12" height="12" rx="2" fill="var(--hv-ink)" />
+                <text x="525" y="252" fontSize="13" fontWeight="800" letterSpacing="1.5" textAnchor="end" fill="var(--hv-ink)" fontFamily="var(--font-mono)">
+                  4. ML TELEMETRY
+                </text>
+                <text x="525" y="270" fontSize="11" textAnchor="end" fill="var(--hv-ink-70)" fontFamily="var(--font-sans)">
+                  98.7% zero-day anomaly detection
+                </text>
+              </g>
+
+              {/* Compounds Arrow to Column 3 */}
+              <path d="M 895 295 L 1030 295" stroke="var(--hv-ink)" strokeWidth="1.6" markerEnd="url(#bp-arrow)" className="hv-draw-line" style={{ "--len": 135, "--d": "600ms" } as React.CSSProperties} />
+              <text x="962" y="283" fontSize="10" fontWeight="700" letterSpacing="1.5" textAnchor="middle" fill="var(--hv-muted)" fontFamily="var(--font-mono)">
                 COMPOUNDS
               </text>
 
-              {/* ================= COLUMN 3: ACCUMULATION (Right) ================= */}
-              <g className="hv-fade" style={{ "--d": "840ms" } as React.CSSProperties}>
-                <text x="1144" y="300" fontSize="20" fontWeight="800" fill="var(--hv-ink)" fontFamily="var(--font-sans)">
-                  It compounds every lap
+              {/* ================= COLUMN 3: ACCUMULATED VALUE (Right) ================= */}
+              <g className="hv-fade" style={{ "--d": "650ms" } as React.CSSProperties}>
+                {/* Title and Narrative */}
+                <text x="1048" y="94" fontSize="20" fontWeight="800" fill="var(--hv-ink)" fontFamily="var(--font-sans)">
+                  Compounds Every Lap
                 </text>
-                <text x="1144" y="330" fontSize="13" fill="var(--hv-ink-70)" fontFamily="var(--font-sans)">
+                <text x="1048" y="118" fontSize="12" fill="var(--hv-ink-70)" fontFamily="var(--font-sans)">
                   The more iterations executed, the tighter
                 </text>
-                <text x="1144" y="352" fontSize="13" fill="var(--hv-ink-70)" fontFamily="var(--font-sans)">
+                <text x="1048" y="136" fontSize="12" fill="var(--hv-ink-70)" fontFamily="var(--font-sans)">
                   security boundaries and performance become.
                 </text>
 
-                {/* Divider Line under Heading */}
-                <path d="M 1144 400 L 1392 400" stroke="var(--hv-ink)" strokeWidth="1.6" className="hv-draw-line" style={{ "--len": 248, "--d": "880ms" } as React.CSSProperties} />
+                {/* Sub divider */}
+                <path d="M 1048 152 L 1392 152" stroke="var(--hv-hairline)" strokeWidth="1.2" />
 
-                {/* Upward Stack Arrow */}
-                <path d="M 1194 440 L 1194 416" stroke="var(--hv-ink)" strokeWidth="1.6" markerEnd="url(#bp-arrow)" className="hv-pulse" />
+                {/* Upward Stack Flow Arrow */}
+                <path d="M 1068 184 L 1068 162" stroke="var(--hv-ink)" strokeWidth="1.5" markerEnd="url(#bp-arrow)" />
+                <text x="1084" y="176" fontSize="9.5" fontWeight="700" letterSpacing="1.5" fill="var(--hv-muted)" fontFamily="var(--font-mono)">
+                  ACCUMULATED STATE
+                </text>
 
-                {/* Stack Item 3: Zero-Day Resilience */}
-                <g transform="translate(1144, 450)">
-                  <rect width="248" height="64" fill="var(--hv-paper)" stroke="var(--hv-ink)" strokeWidth="1.2" />
-                  <rect x="0" y="0" width="6" height="64" fill="var(--hv-ink)" />
-                  <text x="18" y="26" fontSize="10" fontWeight="700" letterSpacing="1.5" fill="var(--hv-muted)">
+                {/* Stack Item 3: Lap 3 */}
+                <g transform="translate(1048, 196)">
+                  <rect width="344" height="88" rx="4" fill="var(--hv-paper)" stroke="var(--hv-ink)" strokeWidth="1.4" />
+                  <rect x="0" y="0" width="6" height="88" rx="4 0 0 4" fill="var(--hv-ink)" />
+                  <text x="22" y="28" fontSize="10" fontWeight="700" letterSpacing="1.5" fill="var(--hv-muted)" fontFamily="var(--font-mono)">
                     LAP 3 // RESILIENCE
                   </text>
-                  <text x="18" y="48" fontSize="13" fontWeight="800" fill="var(--hv-ink)">
+                  <text x="22" y="52" fontSize="14" fontWeight="800" fill="var(--hv-ink)" fontFamily="var(--font-sans)">
                     Zero-Day ML Defense Active
                   </text>
+                  <text x="22" y="72" fontSize="11" fill="var(--hv-ink-70)" fontFamily="var(--font-mono)">
+                    Continuous telemetry &amp; live packet radar
+                  </text>
                 </g>
 
-                {/* Stack Item 2: Offline-First Native Sync */}
-                <g transform="translate(1144, 532)">
-                  <rect width="248" height="64" fill="var(--hv-paper)" stroke="var(--hv-ink)" strokeWidth="1.2" />
-                  <rect x="0" y="0" width="6" height="64" fill="var(--hv-ink)" opacity="0.6" />
-                  <text x="18" y="26" fontSize="10" fontWeight="700" letterSpacing="1.5" fill="var(--hv-muted)">
+                {/* Stack Item 2: Lap 2 */}
+                <g transform="translate(1048, 300)">
+                  <rect width="344" height="88" rx="4" fill="var(--hv-paper)" stroke="var(--hv-hairline)" strokeWidth="1.2" />
+                  <rect x="0" y="0" width="6" height="88" rx="4 0 0 4" fill="var(--hv-ink)" opacity="0.6" />
+                  <text x="22" y="28" fontSize="10" fontWeight="700" letterSpacing="1.5" fill="var(--hv-muted)" fontFamily="var(--font-mono)">
                     LAP 2 // CLIENT PERFORMANCE
                   </text>
-                  <text x="18" y="48" fontSize="13" fontWeight="800" fill="var(--hv-ink)">
+                  <text x="22" y="52" fontSize="14" fontWeight="800" fill="var(--hv-ink)" fontFamily="var(--font-sans)">
                     Offline-First 120 FPS Sync
+                  </text>
+                  <text x="22" y="72" fontSize="11" fill="var(--hv-ink-70)" fontFamily="var(--font-mono)">
+                    Impeller ARM runtime with 0 frame drops
                   </text>
                 </g>
 
-                {/* Stack Item 1: Hardened API Baseline */}
-                <g transform="translate(1144, 614)">
-                  <rect width="248" height="64" fill="var(--hv-paper)" stroke="var(--hv-ink)" strokeWidth="1.2" />
-                  <rect x="0" y="0" width="6" height="64" fill="var(--hv-ink)" opacity="0.3" />
-                  <text x="18" y="26" fontSize="10" fontWeight="700" letterSpacing="1.5" fill="var(--hv-muted)">
+                {/* Stack Item 1: Lap 1 */}
+                <g transform="translate(1048, 404)">
+                  <rect width="344" height="88" rx="4" fill="var(--hv-paper)" stroke="var(--hv-hairline)" strokeWidth="1.2" />
+                  <rect x="0" y="0" width="6" height="88" rx="4 0 0 4" fill="var(--hv-ink)" opacity="0.3" />
+                  <text x="22" y="28" fontSize="10" fontWeight="700" letterSpacing="1.5" fill="var(--hv-muted)" fontFamily="var(--font-mono)">
                     LAP 1 // ARCHITECTURE
                   </text>
-                  <text x="18" y="48" fontSize="13" fontWeight="800" fill="var(--hv-ink)">
+                  <text x="22" y="52" fontSize="14" fontWeight="800" fill="var(--hv-ink)" fontFamily="var(--font-sans)">
                     Hardened Cryptographic Baseline
+                  </text>
+                  <text x="22" y="72" fontSize="11" fill="var(--hv-ink-70)" fontFamily="var(--font-mono)">
+                    Hardware keystores &amp; strict TLS 1.3 pinning
                   </text>
                 </g>
               </g>

@@ -93,16 +93,22 @@ body {
   font-family: var(--font-sans);
   font-weight: 800;
   font-size: clamp(2.5rem, 6.8vw, 6.75rem);
-  line-height: 1.02;
+  line-height: 1.1;
   letter-spacing: -0.04em;
   color: var(--hv-ink);
+}
+
+.hv-hero-title .hv-mask {
+  line-height: 1.14;
+  margin-bottom: 0.04em;
+  padding-bottom: 0.1em;
 }
 
 .hv-display-jp {
   font-family: var(--font-sans);
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.08;
+  line-height: 1.12;
   color: var(--hv-ink);
 }
 
@@ -117,6 +123,10 @@ body {
   border-color: var(--hv-hairline);
 }
 
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
 /* ==================== HAVU ANIMATION ENGINE ==================== */
 
 /* 1. Masked Text Reveals */
@@ -124,8 +134,8 @@ body {
 .hv-clip {
   display: block;
   overflow: hidden;
-  margin-bottom: -0.24em;
-  padding-bottom: 0.24em;
+  margin-bottom: 0;
+  padding-bottom: 0.1em;
 }
 
 .hv-mask > *,

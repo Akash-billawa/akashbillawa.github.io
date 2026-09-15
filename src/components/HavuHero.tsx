@@ -12,20 +12,19 @@ export default function HavuHero() {
       data-reveal-stagger="75"
       className="hv-grain relative w-full min-h-[92vh] px-6 sm:px-12 pt-12 pb-16 flex flex-col justify-between overflow-hidden"
     >
-      {/* Top Kicker Bar */}
       {/* Top Kicker Bar with Telemetry UFO Probe */}
-      <div className="w-full flex items-center justify-between gap-4 pt-2 relative z-10">
-        <div className="hv-fade hv-kicker">
+      <div className="w-full flex items-center justify-between gap-4 pt-2 relative z-10 flex-wrap">
+        <div className="hv-fade hv-kicker flex-shrink-0">
           <span className="w-1.5 h-1.5 bg-[var(--hv-ink)] rounded-full hv-twinkle"></span>
           <span>Cyber Security &amp; Mobile Engineer</span>
         </div>
         
-        <div className="hv-fade hv-kicker hidden md:flex items-center gap-3">
-          <span>Bangalore [12.9716° N, 77.5946° E] — MSc Active</span>
+        <div className="hv-fade hv-kicker hidden md:flex items-center gap-3 flex-shrink-0">
+          <span>Bangalore <span className="hidden lg:inline">[12.9716° N, 77.5946° E]</span> — MSc Active</span>
           <span className="text-[var(--hv-hairline)]" aria-hidden="true">/</span>
 
           {/* Interactive Pixel UFO / Satellite Telemetry Probe */}
-          <div className="relative select-none flex items-center">
+          <div className="relative select-none flex items-center flex-shrink-0">
             <button
               onClick={() => setPixelActive(!pixelActive)}
               data-cursor="link"
