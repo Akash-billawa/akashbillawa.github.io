@@ -13,7 +13,7 @@ export default function HavuContact() {
   });
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("akash.security.dev@gmail.com");
+    navigator.clipboard.writeText("poojaryakash55@gmail.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
@@ -57,7 +57,7 @@ export default function HavuContact() {
                 DIRECT ENDPOINT
               </span>
               <p className="text-2xl font-bold tracking-tight text-[var(--hv-ink)]">
-                akash.security.dev@gmail.com
+                poojaryakash55@gmail.com
               </p>
               <button
                 onClick={copyEmail}
